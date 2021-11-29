@@ -1,5 +1,7 @@
 public class Variable {
     public static void main(String[] args) {
+
+        //Обьявление переменных
         byte totalCores = 4;
         short baseFrequency = 3500;
         int memorySize = 128;
@@ -7,8 +9,9 @@ public class Variable {
         float voltage = 220;
         double price = 450.99;
         char os = 'W';
-        boolean server = true;
+        boolean active = true;
 
+        //Вовод на консоль
         System.out.println(totalCores);
         System.out.println(baseFrequency);
         System.out.println(memorySize);
@@ -16,6 +19,6 @@ public class Variable {
         System.out.println(voltage);
         System.out.println(price);
         System.out.println(os);
-        System.out.println(server);
+        System.out.println(active);
     }
 }
