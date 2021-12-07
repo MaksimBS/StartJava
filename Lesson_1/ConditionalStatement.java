@@ -1,38 +1,32 @@
-public class ConditionalStatement
-{
+public class ConditionalStatement {
     public static void main(String[] args) {
-
-        //Возраст
+        //Р’РѕР·СЂР°СЃС‚
         byte age = 40;
-        // 1- Мужской 2 - Женский
-        byte gender = 1;
-        //Рост в м.
-        double height = 1.82;
-        //Первая буква имени
-        char firstLetterName = 'X';
-
         if (age > 20) {
-            System.out.println("Возраст: " + age);
+            System.out.println("Р’РѕР·СЂР°СЃС‚: " + age);
         }
-
-        if (gender == 1) {
-            System.out.println("Пол: М");
-        } else if (gender == 2) {
-            System.out.println("Пол: Ж");
+        // РџРѕР» РјСѓР¶СЃРєРѕР№
+        boolean genderMan = true;
+        if (genderMan) {
+            System.out.println("РџРѕР»: РњСѓР¶СЃРєРѕР№");
+        } else {
+            System.out.println("РџРѕР»: Р–РµРЅСЃРєРёР№");
         }
-
+        //РІС‹СЃРѕС‚Р° РІ РјРµС‚СЂР°С….
+        double height = 1.82;
         if (height < 1.80) {
-            System.out.println("Рост ниже 1.8м.");
+            System.out.println("Р РѕСЃС‚ РЅРёР¶Рµ 1.8Рј.");
         } else {
-            System.out.println("Рост 1.8м или выше");
+            System.out.println("Р РѕСЃС‚ 1.8Рј РёР»Рё РІС‹С€Рµ");
         }
-
+        //РїРµСЂРІР°СЏ Р±СѓРєРІР° РІ РёРјРµРЅРё
+        char firstLetterName = 'X';
         if(firstLetterName == 'M') {
-            System.out.println("Первая буква имени начинается на М");
+            System.out.println("РџРµСЂРІР°СЏ Р±СѓРєРІР° РёРјРµРЅРё Рњ");
         } else if(firstLetterName == 'I') {
-            System.out.println("Первая буква имени начинается на I");
+            System.out.println("РџРµСЂРІР°СЏ Р±СѓРєРІР° РёРјРµРЅРё I");
         } else {
-            System.out.println("Первая буква имени начинается на "+firstLetterName);
+            System.out.println("РџРµСЂРІР°СЏ Р±СѓРєРІР° РёРјРµРЅРё "+firstLetterName);
         }
     }
 }

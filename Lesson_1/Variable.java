@@ -1,24 +1,21 @@
 public class Variable {
     public static void main(String[] args) {
-
         //Обьявление переменных
         byte totalCores = 4;
-        short baseFrequency = 3500;
-        int memorySize = 128;
-        long tdp = 95;
-        float voltage = 220;
-        double price = 450.99;
-        char os = 'W';
-        boolean active = true;
-
-        //Вовод на консоль
         System.out.println(totalCores);
+        short baseFrequency = 3500;
         System.out.println(baseFrequency);
+        int memorySize = 128;
         System.out.println(memorySize);
+        long tdp = 95;
         System.out.println(tdp);
+        float voltage = 220.1;
         System.out.println(voltage);
+        double price = 450.99;
         System.out.println(price);
+        char os = 'W';
         System.out.println(os);
+        boolean active = true;
         System.out.println(active);
     }
 }

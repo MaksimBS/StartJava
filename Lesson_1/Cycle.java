@@ -1,20 +1,16 @@
 public class Cycle {
-
     public static void main(String[] args) {
-
-        //Выведите на консоль с помощью цикла for все числа от [0, 20]
+        //С†РёРєР» For РѕС‚ 0 РґРѕ 20
         for (int i = 0; i < 21 ; i++ ) {
             System.out.println(i);
         }
-
-        //Выведите на консоль с помощью цикла while все числа от [6, -6] (с шагом итерации 2)
+        //С†РёРєР» while [6, -6] (С€Р°Рі 2)
         int i = 6;
         while ( i > -7 ) {
             System.out.println(i);
             i = i- 2;
         }
-
-        //Подсчитайте с помощью цикла do-while сумму нечетных чисел от [10, 20]. Выведите ее на консоль
+        //С†РёРєР» do
         i = 10;
         int symm = 0;
         do {
@@ -23,7 +19,6 @@ public class Cycle {
             }
             i++;
         } while (i < 21);
-
         System.out.println(symm);
     }
 }

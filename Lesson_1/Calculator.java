@@ -1,54 +1,51 @@
 import java.util.Scanner;
 
-public class Calculator
-{
+public class Calculator {
     public static void main(String[] args) {
-
-        System.out.println("Программа калькулятор");
-        System.out.println("Вводим целое число1, знак (+, -, *, /, ^, %), целое число2  ");
-        System.out.println("Получаем результат");
+        System.out.println("РљР°Р»СЊРєСѓСЂСЏС‚РѕСЂ");
+        System.out.println("Р’РІРѕРґРёРј С‡РёСЃР»Рѕ 1, РІРІРѕРґРёРј Р·РЅР°Рє (+, -, *, /, ^, %), РІРІРѕРґРёРј 2 С‡РёСЃР»Рѕ");
         System.out.println("");
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Введите число1: ");
+        System.out.print("Р’РІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёР»СЃРѕ 1: ");
         int num1 = sc.nextInt();
         // This line you have to add (It consumes the \n character)
         sc.nextLine();
 
-        System.out.print("Введите знак: ");
+        System.out.print("Р’РІРµРґРёРµ Р·РЅР°Рє: ");
         String symbol = sc.nextLine();
 
-        System.out.print("Введите число2: ");
+        System.out.print("Р’РІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёР»СЃРѕ 2: ");
         int num2 = sc.nextInt();
 
-        //Сложение
+        //РЎР»РѕР¶РµРЅРёРµ
         if (symbol.equals("+")) {
             System.out.println(num1+symbol+num2+"="+(num1+num2));
-        // Вычетание
+            //Р’С‹С‡РµС‚Р°РЅРёРµ
         } else if (symbol.equals("-")) {
             System.out.println(num1+symbol+num2+"="+(num1-num2));
-        // Умножение
+            //РЈРјРЅРѕР¶РµРЅРёРµ
         } else if (symbol.equals("*")) {
             System.out.println(num1+symbol+num2+"="+(num1*num2));
-        // Деление
+            //Р”РёР»РµРЅРёРµ
         } else if (symbol.equals("/")) {
             System.out.println(num1+symbol+num2+"="+(num1/num2));
-        // Возведение в степень
-        } if (symbol.equals("^")) {
+            //Р’РѕР·РІРµРґРµРЅРёРµ РІ СЃС‚РµРїРµРЅСЊ
+        } else if (symbol.equals("^")) {
             int result = 1;
             for (int i = 1; i < num2+1; i++) {
                 result = result * num1;
             }
             System.out.println(num1+symbol+num2+"="+result);
-        // Остаток
-        } if (symbol.equals("%")) {
+            //РћСЃС‚Р°С‚РѕРє РѕС‚ РґРµР»РµРЅРёСЏ
+        } else if (symbol.equals("%")) {
             double x;
-            x = (double)num1 / (double)num2; 
+            x = (double)num1 / (double)num2;
             System.out.println(num1+symbol+num2+"="+ (x % 1));
-        // не верная операция
+            // РµСЃР»Рё РІРІРµР»Рё РЅРµРІРµСЂРЅС‹Р№ Р·РЅР°Рє, РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёРµ
         } else {
-            System.out.println("Введана неверная информация, попробуйте снова");
+            System.out.println("РћС€РёР±РєР°. Р’РІРµР»Рё РЅРµРІРµСЂРЅС‹Рµ РґР°РЅРЅС‹Рµ!");
         }
     }
 }
