@@ -1,32 +1,77 @@
 public class Wolf {
-    //объявите в нем поля: пол, кличка, вес, возраст, окрас
-    boolean genderMan;
-    String nickName;
-    int weight;
-    int age;
-    String color;
+    //Описание пол мужской
+    private boolean genderMan;
+    public void setGenderMan(boolean genderMan) {
+        this.genderMan = genderMan;
+    }
 
-    //реализуйте методы: идти, сидеть, бежать, выть, охотиться
-    //в каждом методе выводите сообщение вида: "Воет", "Сидит".
-    void move() {
+    public boolean isGenderMan() {
+        return genderMan;
+    }
+
+    //Описание клички
+    private String nickName;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    //Описание веса
+    private int weight;
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    //Описание возраст
+    private int age;
+    public void setAge(int age) {
+         if (age > 8) {
+             System.out.println("Не корректный возраст");
+         } else {
+             this.age = age;
+         }
+        
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    //Описание цвета
+    private String color;
+    public void setСolor(String color) {
+        this.color = color;
+    }
+
+    public String getСolor() {
+        return color;
+    }
+
+    //Методы
+    public void move() {
         System.out.println("Иду");
     }
 
-    void sit() {
+    public void sit() {
         System.out.println("Сижу");
     }
 
-    void run() {
+    public void run() {
         System.out.println("Бегу");
     }
 
-    void howl() {
+    public void howl() {
         System.out.println("Вою");
     }
 
-    void hunt() {
+    public void hunt() {
         System.out.println("Охочусь");
     }
-
-
 }
