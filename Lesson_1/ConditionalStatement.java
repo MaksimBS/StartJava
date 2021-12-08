@@ -5,6 +5,7 @@ public class ConditionalStatement {
         if (age > 20) {
             System.out.println("Возраст: " + age);
         }
+        
         // Пол мужской
         boolean genderMan = true;
         if (genderMan) {
@@ -12,6 +13,7 @@ public class ConditionalStatement {
         } else {
             System.out.println("Пол: Женский");
         }
+        
         //высота в метрах.
         double height = 1.82;
         if (height < 1.80) {
@@ -19,6 +21,7 @@ public class ConditionalStatement {
         } else {
             System.out.println("Рост 1.8м или выше");
         }
+        
         //первая буква в имени
         char firstLetterName = 'X';
         if(firstLetterName == 'M') {
@@ -26,7 +29,7 @@ public class ConditionalStatement {
         } else if(firstLetterName == 'I') {
             System.out.println("Первая буква имени I");
         } else {
-            System.out.println("Первая буква имени "+firstLetterName);
+            System.out.println("Первая буква имени " + firstLetterName);
         }
     }
 }
