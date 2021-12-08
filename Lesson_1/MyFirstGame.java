@@ -10,7 +10,7 @@ public class MyFirstGame {
         int endRange = 100; 
 
         // загадываем число
-        int randomNumber = startRange  + (int) (Math.random() * endRange ); 
+        int randomNumber = startRange  + (int) (Math.random() * endRange); 
 
         //пробуем угодать в цикле, программа тупенькая перебирает все в подряд.
         for (int i = 0; i < 101; i++) {
