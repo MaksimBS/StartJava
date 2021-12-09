@@ -16,8 +16,8 @@ public class Calculator {
         String mathSign = sc.nextLine();
 
         System.out.print("Введите целое чилсо 2: ");
-        double num2 = sc.nextInt();
-        double result = 0;
+        int num2 = sc.nextInt();
+        int result = 0;
         
         if (mathSign.equals("+")) {
             result = num1 + num2;
@@ -33,7 +33,7 @@ public class Calculator {
                 result *= num1;
             }
         } else if (mathSign.equals("%")) {
-            result = (num1 / num2) % 1;
+            result = num1 - num2 * (num1 / num2);
         } else {
             System.out.println("Ошибка. Ввели неверные данные!");
         }
