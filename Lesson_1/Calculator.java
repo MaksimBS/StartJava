@@ -8,7 +8,7 @@ public class Calculator {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("\nВведите целое чилсо 1: ");
-        double num1 = sc.nextInt();
+        int num1 = sc.nextInt();
         // This line you have to add (It consumes the \n character)
         sc.nextLine();
 
