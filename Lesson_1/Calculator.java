@@ -8,7 +8,7 @@ public class Calculator {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("\nВведите целое чилсо 1: ");
-        int num1 = sc.nextInt();
+        double num1 = sc.nextInt();
         // This line you have to add (It consumes the \n character)
         sc.nextLine();
 
@@ -16,29 +16,30 @@ public class Calculator {
         String mathSign = sc.nextLine();
 
         System.out.print("Введите целое чилсо 2: ");
-        int num2 = sc.nextInt();
-
+        double num2 = sc.nextInt();
+        double result = 0;
+        
         if (mathSign.equals("+")) {
-            System.out.println(num1 + mathSign + num2 + "=" + (num1 + num2));
+            result = num1 + num2;
         } else if (mathSign.equals("-")) {
-            System.out.println(num1 + mathSign + num2 + "=" + (num1 - num2));
+            result = num1 - num2;
         } else if (mathSign.equals("*")) {
-            System.out.println(num1 + mathSign + num2 + "=" + (num1 * num2));
+            result = num1 * num2;
         } else if (mathSign.equals("/")) {
-            System.out.println(num1 + mathSign + num2 + "=" + (num1 / num2));
+            result = num1 / num2;
         } else if (mathSign.equals("^")) {
-            int result = 1;
+            result = 1;
             for (int i = 1; i < num2 + 1; i++) {
                 result *= num1;
             }
-            System.out.println(num1 + mathSign + num2 + "=" + result);
         } else if (mathSign.equals("%")) {
             double x;
-            x = (double) num1 / (double) num2;
-            System.out.println(num1 + mathSign + num2 + "=" + (x % 1));
+            x = num1 / num2;
+            result = (num1 / num2) % 1;
         } else {
             System.out.println("Ошибка. Ввели неверные данные!");
         }
+        System.out.println(num1 + mathSign + num2 + "=" + result);
     }
 }
 
