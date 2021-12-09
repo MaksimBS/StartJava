@@ -33,8 +33,6 @@ public class Calculator {
                 result *= num1;
             }
         } else if (mathSign.equals("%")) {
-            double x;
-            x = num1 / num2;
             result = (num1 / num2) % 1;
         } else {
             System.out.println("Ошибка. Ввели неверные данные!");
