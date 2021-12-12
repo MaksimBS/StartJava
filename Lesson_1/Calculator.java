@@ -17,28 +17,27 @@ public class Calculator {
 
         System.out.print("Введите целое чилсо 2: ");
         int num2 = sc.nextInt();
-
+        int result = 0;
+        
         if (mathSign.equals("+")) {
-            System.out.println(num1 + mathSign + num2 + "=" + (num1 + num2));
+            result = num1 + num2;
         } else if (mathSign.equals("-")) {
-            System.out.println(num1 + mathSign + num2 + "=" + (num1 - num2));
+            result = num1 - num2;
         } else if (mathSign.equals("*")) {
-            System.out.println(num1 + mathSign + num2 + "=" + (num1 * num2));
+            result = num1 * num2;
         } else if (mathSign.equals("/")) {
-            System.out.println(num1 + mathSign + num2 + "=" + (num1 / num2));
+            result = num1 / num2;
         } else if (mathSign.equals("^")) {
-            int result = 1;
+            result = 1;
             for (int i = 1; i < num2 + 1; i++) {
                 result *= num1;
             }
-            System.out.println(num1 + mathSign + num2 + "=" + result);
         } else if (mathSign.equals("%")) {
-            double x;
-            x = (double) num1 / (double) num2;
-            System.out.println(num1 + mathSign + num2 + "=" + (x % 1));
+            result = num1 - num2 * (num1 / num2);
         } else {
             System.out.println("Ошибка. Ввели неверные данные!");
         }
+        System.out.println(num1 + mathSign + num2 + "=" + result);
     }
 }
 

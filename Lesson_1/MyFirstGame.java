@@ -1,6 +1,6 @@
 public class MyFirstGame {
     public static void main(String[] args) {
-        System.out.println("Угодай число");
+        System.out.println("Угадай число");
         System.out.println("Программа загадывает число");
         System.out.println("Программа угадывает число");
         System.out.println("");
