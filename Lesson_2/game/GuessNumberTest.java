@@ -6,23 +6,20 @@ public class GuessNumberTest {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Введите имя первого игрока: ");
-        Player firstPlayer = new Player();
-        firstPlayer.setName(sc.nextLine());
-        System.out.println("Введите имя второго игрока: ");
-        Player secondPlayer = new Player();
-        secondPlayer.setName(sc.nextLine());
+        Player firstPlayer = new Player(sc.nextLine());
 
-        GuessNumber game = new GuessNumber();
-        game.setFirstPlayer(firstPlayer);
-        game.setSecondPlayer(secondPlayer);
+        System.out.println("Введите имя второго игрока: ");
+        Player secondPlayer = new Player(sc.nextLine());
+
+        GuessNumber game = new GuessNumber(firstPlayer,secondPlayer);
 
         String nextTurn = "yes";
         while (nextTurn.equals("yes")) {
-            game.startGame();
+            game.start();
             do {
                 System.out.println("Хотите продолжить? [yes/no]: ");
                 nextTurn = sc.next();
-            } while (nextTurn.equals("yes") == false && nextTurn.equals("no") == false);
+            } while (!nextTurn.equals("yes") && !nextTurn.equals("no"));
         }
     }
 }

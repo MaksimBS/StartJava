@@ -1,35 +1,30 @@
 import java.util.Scanner;
 
 public class GuessNumber {
-    Scanner scan = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     private Player firstPlayer;
     private Player secondPlayer;
     private int hiddenNumber;
-    private boolean onGame;
 
-    public void setSecondPlayer (Player secondPlayer) {
+    public GuessNumber(Player firstPlayer, Player secondPlayer) {
+        this.firstPlayer = firstPlayer;
         this.secondPlayer = secondPlayer;
     }
 
-    public void setFirstPlayer (Player firstPlayer) {
-        this.firstPlayer = firstPlayer;
-    }
-
-    public void startGame() {
-        onGame = true;
+    public void start() {
         hiddenNumber = getRundomNumber();
         System.out.println("Компьютер загодал число от 0 до 100. Начинайте угадывать.");
 
         do {
-            //Пробует отгазать первый игрок
-            if (onGame = true) {
-                playerМove(firstPlayer);
+            //Пробует отгадать первый игрок
+            if (playerМove(firstPlayer)) {
+                break;
             }
             //Пробует отгадать второй игрок
-            if (onGame = true) {
-                playerМove(firstPlayer);
+            if (playerМove(secondPlayer)) {
+                break;
             }
-        } while (onGame == true);
+        } while (true);
     }
 
     private int getRundomNumber () {
@@ -38,17 +33,18 @@ public class GuessNumber {
         return startRange + (int) (Math.random() * endRange);
     }
 
-    private void playerМove (Player nextPlayer) {
-        System.out.println("Ход: "+nextPlayer.getName());
-        nextPlayer.setNumber();
-        System.out.println(nextPlayer.getName()+" называет число: "+nextPlayer.getNumber());
+    private boolean playerМove (Player nextPlayer) {
+        System.out.println("Ход: " + nextPlayer.getName());
+        System.out.print(nextPlayer.getName() + " называет число: ");
+        nextPlayer.setNumber(sc.nextInt());
         if (nextPlayer.getNumber() > hiddenNumber) {
-            System.out.println("Введенное "+nextPlayer.getName()+" число больше того, что загадал компьютер!");
+            System.out.println("Введенное " + nextPlayer.getName() + " число больше того, что загадал компьютер!");
         } else if (nextPlayer.getNumber() < hiddenNumber) {
-            System.out.println("Введенное "+nextPlayer.getName()+" число меньше того, что загадал компьютер!");
+            System.out.println("Введенное " + nextPlayer.getName() + " число меньше того, что загадал компьютер!");
         } else {
-            System.out.println(nextPlayer.getName()+ " Вы выиграли! ");
-            onGame = false;
+            System.out.println(nextPlayer.getName() + " Вы выиграли! ");
+            return true;
         }
+        return false;
     }
 }
