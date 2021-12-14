@@ -7,7 +7,7 @@ public class Jaeger {
     private int strength;
     private int armor;
 
-    public Jaeger(String modelName, String mark, String origin, float height, float weight, int strength, int armor) {
+    public Jaeger(String modelName, String mark, String origin, float height, float weight, int strength, int armor){
         this.modelName = modelName;
         this.mark = mark;
         this.origin = origin;
@@ -16,7 +16,7 @@ public class Jaeger {
         this.strength = strength;
         this.armor = armor;
     }
-    
+
     public String getModelName() {
         return modelName;
     }
@@ -46,18 +46,18 @@ public class Jaeger {
     }
 
     public void drift() {
-        System.out.println(this.modelName +" уклоняется");
+        System.out.println(modelName + " уклоняется");
     }
 
     public void move() {
-        System.out.println(this.modelName +" двигается");
+        System.out.println(modelName + " двигается");
     }
 
     public void shot() {
-        System.out.println(this.modelName +" стреляет");
+        System.out.println(modelName + " стреляет");
     }
 
     public void defending() {
-        System.out.println(this.modelName +" обороняется");
+        System.out.println(modelName + " обороняется");
     }
 }

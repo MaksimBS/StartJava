@@ -17,23 +17,23 @@ public class GuessNumber {
 
         do {
             //Пробует отгадать первый игрок
-            if (playerМove(firstPlayer)) {
+            if (makeMove(firstPlayer)) {
                 break;
             }
             //Пробует отгадать второй игрок
-            if (playerМove(secondPlayer)) {
+            if (makeMove(secondPlayer)) {
                 break;
             }
         } while (true);
     }
 
-    private int getRundomNumber () {
+    private int getRundomNumber() {
         int startRange = 0;
         int endRange = 100;
         return startRange + (int) (Math.random() * endRange);
     }
 
-    private boolean playerМove (Player nextPlayer) {
+    private boolean makeMove(Player nextPlayer) {
         System.out.println("Ход: " + nextPlayer.getName());
         System.out.print(nextPlayer.getName() + " называет число: ");
         nextPlayer.setNumber(sc.nextInt());
