@@ -1,5 +1,6 @@
+package com.startjava.lesson_2_3.wolf;
+
 public class Wolf {
-    //Описание пол мужской
     private boolean genderMan;
     public void setGenderMan(boolean genderMan) {
         this.genderMan = genderMan;
@@ -9,7 +10,6 @@ public class Wolf {
         return genderMan;
     }
 
-    //Описание клички
     private String nickName;
     public void setNickName(String nickName) {
         this.nickName = nickName;
@@ -19,7 +19,6 @@ public class Wolf {
         return nickName;
     }
 
-    //Описание веса
     private int weight;
     public void setWeight(int weight) {
         this.weight = weight;
@@ -29,7 +28,6 @@ public class Wolf {
         return weight;
     }
 
-    //Описание возраст
     private int age;
     public void setAge(int age) {
          if (age > 8) {
@@ -43,7 +41,6 @@ public class Wolf {
         return age;
     }
 
-    //Описание цвета
     private String color;
     public void setСolor(String color) {
         this.color = color;
@@ -53,24 +50,23 @@ public class Wolf {
         return color;
     }
 
-    //Методы
     public void move() {
-        System.out.println("Иду");
+        System.out.println("Go");
     }
 
     public void sit() {
-        System.out.println("Сижу");
+        System.out.println("Sit");
     }
 
     public void run() {
-        System.out.println("Бегу");
+        System.out.println("Run");
     }
 
     public void howl() {
-        System.out.println("Вою");
+        System.out.println("Howl");
     }
 
     public void hunt() {
-        System.out.println("Охочусь");
+        System.out.println("Hunt");
     }
 }

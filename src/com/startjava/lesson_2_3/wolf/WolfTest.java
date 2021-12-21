@@ -1,22 +1,24 @@
+package com.startjava.lesson_2_3.wolf;
+
 public class WolfTest {
     public static void main(String[] args) {
         Wolf test = new Wolf();
         // проверка пола
         test.setGenderMan(true);
         if (test.isGenderMan()) {
-            System.out.println("Пол волка = Мужской");
+            System.out.println("Gender = Men");
         } else {
-            System.out.println("Пол волка = Женский");
+            System.out.println("Gender = Women");
         }
         // Провека клички
-        test.setNickName("Серый");
-        System.out.println("Кличка волка = " + test.getNickName());
+        test.setNickName("Grey");
+        System.out.println("Name = " + test.getNickName());
         // Проверка возраста
         test.setAge(11);
-        System.out.println("Возраст волка = " +  test.getAge());
+        System.out.println("Age = " +  test.getAge());
         // Проверка цвета
-        test.setСolor("Белый");
-        System.out.println("Цвет волка = " + test.getСolor());
+        test.setСolor("White");
+        System.out.println("Color = " + test.getСolor());
         
         test.move();
         test.sit();

@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.calculator;
+
 public class Calculator {
     private double num1;
     public void setNum1(double num1) {
@@ -41,7 +43,7 @@ public class Calculator {
                 break;
             default:
                 System.out.println("Ошибка. Ввели неверные данные!");
-                return;
+                break;
         }
         return result;
     }

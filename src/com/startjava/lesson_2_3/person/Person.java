@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.person;
+
 public class Person {
     String gender;
     String name;
@@ -6,22 +8,22 @@ public class Person {
     int age;
 
     public void go() {
-        System.out.println("Идем");
+        System.out.println("Go");
     }
 
     public void sit() {
-        System.out.println("Сидим");
+        System.out.println("Sit");
     }
 
     public void run() {
-        System.out.println("Бежим");
+        System.out.println("Run");
     }
 
     public void speak() {
-        System.out.println("Говорим");
+        System.out.println("Speak");
     }
 
     public void teach() {
-        System.out.println("Учим");
+        System.out.println("Teach");
     }
 }
