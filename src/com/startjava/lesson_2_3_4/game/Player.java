@@ -4,37 +4,34 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int number = 0;
-    private int[] hiddenNumbers;
+    private int sizeArrays = 0;
+    private int[] numbers;
 
     public Player(String name) {
         this.name = name;
-        hiddenNumbers = new int[10];
+        numbers = new int[10];
     }
 
     public String getName() {
         return name;
     }
 
-    public int getNumber() {
-        return number;
+    public int getSizeArrays() {
+        return sizeArrays;
+    }
+
+    public int[] getHiddenNumbers() {
+        return numbers;
     }
 
     public void setHiddenNumbers(int number) {
-        hiddenNumbers[this.number] = number;
-        this.number ++;
+        numbers[this.sizeArrays] = number;
+        this.sizeArrays++;
     }
 
-    public void outputNumbers() {
-        System.out.println();
-
-        int [] numbersCopy = Arrays.copyOf(hiddenNumbers, number);
-        System.out.println(name + " вводил числа " + Arrays.toString(numbersCopy));
-    }
-
-    public void cleanArrays() {
-        if (number > 0) {
-            Arrays.fill(hiddenNumbers, 0, number , 0);
+    public void setUpPlayers() {
+        if (sizeArrays > 0) {
+            Arrays.fill(numbers, 0, sizeArrays, 0);
         }
     }
 }

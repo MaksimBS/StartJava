@@ -13,7 +13,7 @@ public class GuessNumberTest {
         System.out.println("Введите имя второго игрока: ");
         Player secondPlayer = new Player(sc.nextLine());
 
-        GuessNumber game = new GuessNumber(firstPlayer,secondPlayer);
+        GuessNumber game = new GuessNumber(firstPlayer, secondPlayer);
 
         String nextTurn = "yes";
         while (nextTurn.equals("yes")) {

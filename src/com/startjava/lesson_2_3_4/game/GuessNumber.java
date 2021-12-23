@@ -1,5 +1,6 @@
 package com.startjava.lesson_2_3_4.game;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class GuessNumber {
@@ -29,12 +30,13 @@ public class GuessNumber {
             }
         } while (true);
 
-        outputNumbers();
+        outputNumbers(firstPlayer);
+        outputNumbers(secondPlayer);
     }
 
-    public void cleaningPlayers() {
-        firstPlayer.cleanArrays();
-        secondPlayer.cleanArrays();
+    private void cleaningPlayers() {
+        firstPlayer.setUpPlayers();
+        secondPlayer.setUpPlayers();
     }
 
     private int getRundomNumber() {
@@ -44,29 +46,30 @@ public class GuessNumber {
     }
 
     private boolean makeMove(Player nextPlayer) {
-        int number;
         System.out.println("Ход: " + nextPlayer.getName());
         System.out.print(nextPlayer.getName() + " называет число: ");
-        number = sc.nextInt();
+        int number = sc.nextInt();
         nextPlayer.setHiddenNumbers(number);
         if (number > hiddenNumber) {
             System.out.println("Введенное " + nextPlayer.getName() + " число больше того, что загадал компьютер!");
         } else if (number < hiddenNumber) {
             System.out.println("Введенное " + nextPlayer.getName() + " число меньше того, что загадал компьютер!");
         } else {
-            System.out.println("Игрок " + nextPlayer.getName() + " угадал число " + number + " с " + nextPlayer.getNumber() + " попытки");
+            System.out.println("Игрок " + nextPlayer.getName() + " угадал число " + number + " с " + nextPlayer.getSizeArrays() + " попытки");
             return true;
         }
 
-        if (nextPlayer.getNumber() == 10) {
+        if (nextPlayer.getSizeArrays() == 10) {
             System.out.println(nextPlayer.getName() + "У " + nextPlayer.getName() + " закончились попытки");
             return true;
         }
         return false;
     }
 
-    public void outputNumbers() {
-        firstPlayer.outputNumbers();
-        secondPlayer.outputNumbers();
+    private void outputNumbers(Player thisPlayer) {
+        System.out.println();
+
+        int[] numbersCopy = Arrays.copyOf(thisPlayer.getHiddenNumbers(), thisPlayer.getSizeArrays());
+        System.out.println(thisPlayer.getName() + " вводил числа " + Arrays.toString(numbersCopy));
     }
 }
