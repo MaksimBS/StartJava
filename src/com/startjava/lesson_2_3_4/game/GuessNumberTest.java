@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.game;
+package com.startjava.lesson_2_3_4.game;
 
 import java.util.Scanner;
 
@@ -18,6 +18,7 @@ public class GuessNumberTest {
         String nextTurn = "yes";
         while (nextTurn.equals("yes")) {
             game.start();
+
             do {
                 System.out.println("Хотите продолжить? [yes/no]: ");
                 nextTurn = sc.next();

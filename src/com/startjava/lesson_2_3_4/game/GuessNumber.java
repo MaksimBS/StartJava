@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.game;
+package com.startjava.lesson_2_3_4.game;
 
 import java.util.Scanner;
 
@@ -14,6 +14,7 @@ public class GuessNumber {
     }
 
     public void start() {
+        cleaningPlayers();
         hiddenNumber = getRundomNumber();
         System.out.println("Компьютер загодал число от 0 до 100. Начинайте угадывать.");
 
@@ -27,6 +28,13 @@ public class GuessNumber {
                 break;
             }
         } while (true);
+
+        outputNumbers();
+    }
+
+    public void cleaningPlayers() {
+        firstPlayer.cleanArrays();
+        secondPlayer.cleanArrays();
     }
 
     private int getRundomNumber() {
@@ -36,17 +44,29 @@ public class GuessNumber {
     }
 
     private boolean makeMove(Player nextPlayer) {
+        int number;
         System.out.println("Ход: " + nextPlayer.getName());
         System.out.print(nextPlayer.getName() + " называет число: ");
-        nextPlayer.setNumber(sc.nextInt());
-        if (nextPlayer.getNumber() > hiddenNumber) {
+        number = sc.nextInt();
+        nextPlayer.setHiddenNumbers(number);
+        if (number > hiddenNumber) {
             System.out.println("Введенное " + nextPlayer.getName() + " число больше того, что загадал компьютер!");
-        } else if (nextPlayer.getNumber() < hiddenNumber) {
+        } else if (number < hiddenNumber) {
             System.out.println("Введенное " + nextPlayer.getName() + " число меньше того, что загадал компьютер!");
         } else {
-            System.out.println(nextPlayer.getName() + " Вы выиграли! ");
+            System.out.println("Игрок " + nextPlayer.getName() + " угадал число " + number + " с " + nextPlayer.getNumber() + " попытки");
+            return true;
+        }
+
+        if (nextPlayer.getNumber() == 10) {
+            System.out.println(nextPlayer.getName() + "У " + nextPlayer.getName() + " закончились попытки");
             return true;
         }
         return false;
+    }
+
+    public void outputNumbers() {
+        firstPlayer.outputNumbers();
+        secondPlayer.outputNumbers();
     }
 }
