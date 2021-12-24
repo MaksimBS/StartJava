@@ -4,34 +4,34 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int sizeArrays = 0;
-    private int[] numbers;
+    private int countAttempts = 0;
+    private int[] nums;
 
     public Player(String name) {
         this.name = name;
-        numbers = new int[10];
+        nums = new int[10];
     }
 
     public String getName() {
         return name;
     }
 
-    public int getSizeArrays() {
-        return sizeArrays;
+    public int getCountAttempts() {
+        return countAttempts;
     }
 
-    public int[] getHiddenNumbers() {
-        return numbers;
+    public int[] getNums() {
+        return Arrays.copyOf(nums, countAttempts);
     }
 
     public void setHiddenNumbers(int number) {
-        numbers[this.sizeArrays] = number;
-        this.sizeArrays++;
+        nums[this.countAttempts] = number;
+        countAttempts++;
     }
 
-    public void setUpPlayers() {
-        if (sizeArrays > 0) {
-            Arrays.fill(numbers, 0, sizeArrays, 0);
+    public void clearNumbers() {
+        if (countAttempts > 0) {
+            Arrays.fill(nums, 0, countAttempts, 0);
         }
     }
 }

@@ -35,8 +35,8 @@ public class GuessNumber {
     }
 
     private void cleaningPlayers() {
-        firstPlayer.setUpPlayers();
-        secondPlayer.setUpPlayers();
+        firstPlayer.clearNumbers();
+        secondPlayer.clearNumbers();
     }
 
     private int getRundomNumber() {
@@ -55,11 +55,11 @@ public class GuessNumber {
         } else if (number < hiddenNumber) {
             System.out.println("Введенное " + nextPlayer.getName() + " число меньше того, что загадал компьютер!");
         } else {
-            System.out.println("Игрок " + nextPlayer.getName() + " угадал число " + number + " с " + nextPlayer.getSizeArrays() + " попытки");
+            System.out.println("Игрок " + nextPlayer.getName() + " угадал число " + number + " с " + nextPlayer.getCountAttempts() + " попытки");
             return true;
         }
 
-        if (nextPlayer.getSizeArrays() == 10) {
+        if (nextPlayer.getCountAttempts() == 10) {
             System.out.println(nextPlayer.getName() + "У " + nextPlayer.getName() + " закончились попытки");
             return true;
         }
@@ -69,7 +69,11 @@ public class GuessNumber {
     private void outputNumbers(Player thisPlayer) {
         System.out.println();
 
-        int[] numbersCopy = Arrays.copyOf(thisPlayer.getHiddenNumbers(), thisPlayer.getSizeArrays());
-        System.out.println(thisPlayer.getName() + " вводил числа " + Arrays.toString(numbersCopy));
+        int[] numbersCopy = Arrays.copyOf(thisPlayer.getNums(), thisPlayer.getCountAttempts());
+        System.out.print(thisPlayer.getName() + " вводил числа");
+        for (int n : numbersCopy) {
+            System.out.print(" " + n);
+        }
+        System.out.println();
     }
 }
