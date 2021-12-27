@@ -14,8 +14,7 @@ public class GuessNumber {
     }
 
     public void start() {
-        clearPlayerNums();
-        hiddenNumber = getRundomNumber();
+        init();
         System.out.println("Компьютер загодал число от 0 до 100. Начинайте угадывать.");
 
         do {
@@ -33,9 +32,10 @@ public class GuessNumber {
         outputNumbers(secondPlayer);
     }
 
-    private void clearPlayerNums() {
-        firstPlayer.clearNumber();
-        secondPlayer.clearNumber();
+    private void init() {
+        hiddenNumber = getRundomNumber();
+        firstPlayer.clearNumbers();
+        secondPlayer.clearNumbers();
     }
 
     private int getRundomNumber() {
@@ -44,21 +44,21 @@ public class GuessNumber {
         return startRange + (int) (Math.random() * endRange);
     }
 
-    private boolean makeMove(Player nextPlayer) {
-        System.out.println("Ход: " + nextPlayer.getName());
-        System.out.print(nextPlayer.getName() + " называет число: ");
+    private boolean makeMove(Player player) {
+        System.out.println("Ход: " + player.getName());
+        System.out.print(player.getName() + " называет число: ");
         int num = sc.nextInt();
-        nextPlayer.setNum(num);
+        player.setNum(num);
 
         if (num == hiddenNumber) {
-            System.out.println("Игрок " + nextPlayer.getName() + " угадал число " + num + " с " + nextPlayer.getCountAttempts() + " попытки");
+            System.out.println("Игрок " + player.getName() + " угадал число " + num + " с " + player.getCountAttempts() + " попытки");
             return true;
         }
-        String securityAnswer = num > hiddenNumber ? "Введенное " + nextPlayer.getName() + " число больше того, что загадал компьютер!" : "Введенное " + nextPlayer.getName() + " число меньше того, что загадал компьютер!";
-        System.out.println(securityAnswer);
+        String answer = num > hiddenNumber ?  player.getName() + " число больше"  : player.getName() + " число меньше";
+        System.out.println("Введенное " + answer + " того, что загадал компьютер!");
 
-        if (nextPlayer.getCountAttempts() == 10) {
-            System.out.println(nextPlayer.getName() + "У " + nextPlayer.getName() + " закончились попытки");
+        if (player.getCountAttempts() == 10) {
+            System.out.println(player.getName() + "У " + player.getName() + " закончились попытки");
             return true;
         }
         return false;
@@ -68,7 +68,7 @@ public class GuessNumber {
         System.out.println();
 
         System.out.print(thisPlayer.getName() + " вводил числа");
-        for (int num : thisPlayer.getNum()) {
+        for (int num : thisPlayer.getNums()) {
             System.out.print(" " + num);
         }
         System.out.println();

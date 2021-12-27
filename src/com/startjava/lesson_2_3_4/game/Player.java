@@ -5,11 +5,11 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int countAttempts;
-    private int[] num;
+    private int[] nums;
 
     public Player(String name) {
         this.name = name;
-        num = new int[10];
+        nums = new int[10];
     }
 
     public String getName() {
@@ -20,18 +20,18 @@ public class Player {
         return countAttempts;
     }
 
-    public int[] getNum() {
-        return Arrays.copyOf(num, countAttempts);
+    public int[] getNums() {
+        return Arrays.copyOf(nums, countAttempts);
     }
 
     public void setNum(int newNumber) {
-        num[countAttempts] = newNumber;
+        nums[countAttempts] = newNumber;
         countAttempts++;
     }
 
-    public void clearNumber() {
+    public void clearNumbers() {
         if (countAttempts > 0) {
-            Arrays.fill(num, 0, countAttempts, 0);
+            Arrays.fill(nums, 0, countAttempts, 0);
             countAttempts = 0;
         }
     }
